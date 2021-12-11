@@ -3,7 +3,7 @@
 function PrimoInferior($num){
     
     $contador=0;
-
+    $maiorPrimo=0;
     for($n = $num; $n > 1; $n--){
         for($i = 2;$i < $n; $i++){
             if($n % $i == 0){
@@ -13,14 +13,15 @@ function PrimoInferior($num){
             $isPrime = true;
         }
         if($isPrime){
-            echo "Numero $num = ".$n;
+            $maiorPrimo = $n;
             break;
+            
         }
     }
-      
+      return $maiorPrimo;
 }
 
-echo PrimoInferior(10);
+echo "Numero 10 = ".PrimoInferior(10);
 echo "<br>";
-echo PrimoInferior(30);
+echo "Numero 30 = ".PrimoInferior(30);
 ?>
